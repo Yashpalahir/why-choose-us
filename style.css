@@ -1,0 +1,184 @@
+ 
+ @font-face{
+  font-family: myFont;
+  src: url(gotham.ttf);
+ }
+
+ *{
+  font-family: myFont;
+  margin: 0;
+  padding: 0;
+}
+/*for top left card*/
+ .rectangle {
+    width: 511px;
+    height: 294px;
+    position: relative;
+  }
+  
+  .rectangle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgb(130, 9, 47);
+    opacity: 1;
+    transition: height 0.5s ease-in, width 0.5s ease-in;
+  }
+  
+  .rectangle:hover::after {
+    height: 100%;
+    width: 100%;  
+    z-index: 50;
+  } 
+
+  /* for next 3 card*/
+  .rectangle-2 {
+    width: 511px;
+    height: 312px;
+    position: absolute;
+  }
+  
+  .rectangle-2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgb(130, 9, 47);
+    opacity: 0.95;
+    transition: height 0.5s ease-in, width 0.5s ease-in;
+  }
+  
+  .rectangle-2:hover::after {
+    height: 95%;
+    width: 100%;  
+    z-index: 50;
+  } 
+  .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .rectangle-2:hover .hover-text {
+    opacity: 1;
+    z-index: 100;
+  }
+  .rectangle:hover .hover-text {
+    opacity: 1;
+    z-index: 100;
+  }
+
+
+  /*card component*/
+
+
+  .card{
+    width: 511px;
+    height: 330px;
+    margin-bottom: 48px;
+    margin-right: 48px;
+  } 
+
+  .card img{
+    width: 511px;
+    height: 330px;
+    border-radius: 8px;
+    position: absolute;
+  }
+
+  .box{
+    width: 511px;
+    height: 294px;
+    background-color: #114A8D;
+    opacity: 0.9;
+    z-index: 10;
+    position: relative;
+    top: 18px;
+  }
+  .same{
+    color: #FFC758;
+  }
+  .text-box{
+    width: 425px;
+    height: 147px;
+    position: relative;
+    top: 91px;
+    left: 43px;
+    gap: 8px;
+  }
+  .para-1{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.2px;
+    letter-spacing: -0.05em;
+    text-align: center; 
+    margin-bottom: 8px;   
+  }
+  .inner-box-para{
+    font-family: Gotham;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: white;
+  }
+
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 64px;
+    margin-left: 80px;
+  }
+  .main-container h1{
+    margin-bottom: 40px;
+  }
+  .container-1{
+    display: flex;
+  }
+  .container-2{
+    display: flex;
+  }
+
+  .card .linear-gradient{
+    width: 511px;
+    height: 145px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.59) 50%, rgba(0, 0, 0, 1) 100%);
+    position: relative;
+    top: 185px;
+    z-index: 10;
+  }
+  .grad-text{
+    font-family: Shape;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 30.8px;
+    letter-spacing: -0.03em;
+    text-align: center;
+    position: relative;
+    top: 92px;    
+  }
+
+  @media (max-width: 1130px){
+    .container-1{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .container-2{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .main-container{
+      margin-left: 0;
+    }
+  }
